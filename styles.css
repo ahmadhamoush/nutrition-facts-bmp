@@ -4,9 +4,18 @@ padding: 0;
 box-sizing: border-box;
 font-family: sans-serif;
 }
+body{
+  background-color: #eee;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .logo{
-  width:200px;
-  height: 200px;
+  width:150px;
+  height: 150px;
   margin-left: 20px;
 }
 
@@ -19,7 +28,7 @@ form{
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  border: 3px solid black;
+  border: 3px solid #1E1E1E;
   border-radius: 20px;
   margin: 20px;
   background-color: #eee;
@@ -45,10 +54,8 @@ label{
 }
 
 button{
-  font-size: 20px;
+  font-size: 15px;
   cursor: pointer;
-  background-color: black;
-  color:white;
   border-radius: 10px;
   border: none;
   padding: 20px 30px;
@@ -56,8 +63,23 @@ button{
   -webkit-transition:0.5s ease-in-out;
   margin: 20px;
 }
+button[name='example']{
+  margin-top: 0;
+  background-color: #D1B000;
+  color:#eee;
+}
+button[name='bmp']{
+  background-color: #1E1E1E;
+  color:white;
+}
+
 button:hover,button:active{
-  transform: scale(1.07);
+  transform: scale(1.05);
+}
+.instructions{
+  margin: 0 20px;
+  padding:20px;
+  line-height: 1.5;
 }
 
 @keyframes shake {

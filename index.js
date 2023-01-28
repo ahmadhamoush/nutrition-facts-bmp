@@ -23,12 +23,14 @@ function saveBMP(){
   document.querySelectorAll('input').forEach((item) => {
     if(item.value.length !=''){
       item.style.borderColor='green'
+
     }
     else{
       item.style.borderColor='red'
       item.style.animation = 'shake 0.5s'
     }
   });
+
 
    item = {
     name: document.getElementById('name').value,

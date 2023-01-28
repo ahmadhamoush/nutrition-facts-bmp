@@ -8,8 +8,9 @@
   </head>
   <body>
     <canvas id="myCanvas" width="473" height="615" style="border:1px solid #000000; display:none"></canvas>
+      <img class="logo" src="./logo.png" alt="">
     <div class="container">
-    <img class="logo" src="./logo.png" alt="">
+      <button onclick="exampleBMP()" type="button" name="example">Download Example</button>
         <h2>NUTRITION FACTS</h2>
     <form class="" action="index.html" method="post">
       <div class="">
@@ -189,9 +190,17 @@
         <input id="potassiumP" type="number" name="" value="2">
       </div>
       </div>
-      <button onclick="saveBMP()" type="button" name="button">Download</button>
-        <button onclick="exampleBMP()" type="button" name="button">Download Example</button>
+      <button onclick="saveBMP()" type="button" name="bmp">Download</button>
+
     </form>
+    <div class=instructions>
+      <h3>Instructions:</h3>
+      <ol>
+        <li>Copy .bmp file to C:\Mettler Toledo\BITMAP.</li>
+        <li>Open PLU excel sheet and enter .bmp file name for desired item.</li>
+        <li>Connect to scale and wait for transfer.</li>
+      </ol>
+    </div>
     </div>
   </body>
 </html>
