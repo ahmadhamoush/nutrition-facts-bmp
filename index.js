@@ -356,3 +356,9 @@ function DrawText(text,bold,fontSize,xPos,yPos){
   }
   ctx.fillText(text, xPos, yPos);
 }
+function simplified(){
+  window.location='./index-simplified.html'
+}
+function back(){
+  window.location='./index.html'
+}

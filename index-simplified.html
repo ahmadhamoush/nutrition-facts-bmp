@@ -5,25 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles.css">
     <title>BMP</title>
+    <style media="screen">
+    h2{
+      margin: 10px;
+    }
+      form{
+        flex-direction: column;
+        text-align: center;
+      }
+      #options{
+        appearance: none;
+  background-color: transparent;
+  border:1px solid #1E1E1E;
+  padding: 0.5em 1em;
+  width: 80%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+      }
+
+    #options:focus{
+      border-width: 1.5px;
+    }
+    select{
+      outline: none;
+    }
+      .optionsLabel{
+        margin: 10px;
+        font-weight: bold;
+      }
+      .name h3, .number h3{
+        margin: 10px;
+      }
+    </style>
   </head>
   <body>
     <canvas id="myCanvas" width="473" height="615" style="border:1px solid #000000; display:none"></canvas>
       <img class="logo" src="./logo.png" alt="">
     <div class="container">
       <button onclick="exampleBMP()" type="button" name="example">Download Example</button>
-        <button onclick="simplified()" type="button" name="example">View Simplified Version</button>
+        <button onclick="back()" type="button" name="example">View Original</button>
         <h2>NUTRITION FACTS</h2>
     <form class="" action="index.html" method="post">
-      <div class="">
+      <label class="optionsLabel" for="options">Choose an option:</label>
+      <select onchange="showOption()" id="options" class="" name="">
+        <option value="select">Select</option>
+        <option value="name">Name</option>
+        <option value="number">File Number</option>
+        <option value="size">Size</option>
+        <option value="fat">Total Fat</option>
+        <option value="saturated">Saturated Fat</option>
+        <option value="trans">Trans Fat</option>
+        <option value="cholesterol">Cholesterol</option>
+        <option value="sodium">Sodium</option>
+        <option value="carbohydrate">Total Carbohydrate</option>
+        <option value="fiber">Dietary Fiber</option>
+        <option value="sugar">Total Sugars</option>
+        <option value="protein">Protein</option>
+        <option value="vitaminD">Vitamin D</option>
+        <option value="calcium">Calcium</option>
+        <option value="iron">Iron</option>
+        <option value="potassium">Potassium</option>
+      </select>
+
+      <div class="option name">
           <h3>Name:</h3>
             <input id="name" type="text" name="" value="" placeholder="#">
         </div>
-        <div class="">
+        <div class="option number">
             <h3>File Number:</h3>
             <input id="number" type="number" name="" value="" placeholder="eg: 10000">
           </div>
 
-    <div class="">
+    <div class="option size">
       <h3>Size:</h3>
         <div class="">
           <label for="piece">Serving pcs:</label>
@@ -42,7 +99,7 @@
         </div>
     </div>
 
-      <div class="">
+      <div class="option fat">
         <h3>Total Fat:</h3>
         <div class="">
           <label for="fatW">Per Serving (m/g):</label>
@@ -54,7 +111,7 @@
       </div>
       </div>
 
-      <div class="">
+      <div class="option saturated">
         <h3>Saturated Fat:</h3>
         <div class="">
           <label for="saturatedW">Per Serving (m/g):</label>
@@ -66,7 +123,7 @@
       </div>
       </div>
 
-      <div class="">
+      <div class="option trans">
         <h3>Trans Fat:</h3>
         <div class="">
           <label for="transW">Per Serving (m/g):</label>
@@ -78,7 +135,7 @@
       </div>
       </div>
 
-      <div class="">
+      <div class="option cholesterol">
         <h3>Cholesterol:</h3>
         <div class="">
           <label for="cholesterolW">Per Serving (m/g):</label>
@@ -90,7 +147,7 @@
       </div>
       </div>
 
-      <div class="">
+      <div class="option sodium">
         <h3>Sodium:</h3>
         <div class="">
           <label for="sodiumW">Per Serving (m/g):</label>
@@ -103,7 +160,7 @@
       </div>
 
 
-      <div class="">
+      <div class="option carbohydrate">
         <h3>Total Carbohydrate:</h3>
         <div class="">
           <label for="carbohydrateW">Per Serving (m/g):</label>
@@ -115,7 +172,7 @@
       </div>
       </div>
 
-      <div class="">
+      <div class="option fiber">
         <h3>Dietary Fiber:</h3>
         <div class="">
           <label for="fiberW">Per Serving (m/g):</label>
@@ -128,7 +185,7 @@
       </div>
 
 
-      <div class="">
+      <div class="option sugar">
         <h3>Total Sugars:</h3>
         <div class="">
           <label for="sugarW">Per Serving (m/g):</label>
@@ -140,7 +197,7 @@
       </div>
       </div>
 
-      <div class="">
+      <div class="option protein">
         <h3>Protein:</h3>
         <div class="">
           <label for="proteinW">Per Serving (m/g):</label>
@@ -148,7 +205,7 @@
         </div>
       </div>
 
-      <div class="">
+      <div class="option vitaminD">
         <h3>Vitamin D:</h3>
       <div class="">
         <label for="vitaminP">Per Serving (%):</label>
@@ -156,7 +213,7 @@
       </div>
       </div>
 
-      <div class="">
+      <div class="option calcium">
         <h3>Calcium:</h3>
         <div class="">
           <label for="calciumW">Per Serving (m/g):</label>
@@ -168,7 +225,7 @@
       </div>
       </div>
 
-      <div class="">
+      <div class="option iron">
         <h3>Iron:</h3>
         <div class="">
           <label for="ironW">Per Serving (m/g):</label>
@@ -180,7 +237,7 @@
       </div>
       </div>
 
-      <div class="">
+      <div class="option potassium">
         <h3>Potassium:</h3>
         <div class="">
           <label for="potassiumW">Per Serving (m/g):</label>
@@ -207,3 +264,24 @@
 </html>
 <script src="https://cdn.jsdelivr.net/npm/jimp@0.8.0/browser/lib/jimp.min.js"></script>
 <script src="index.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+  document.querySelectorAll('.option').forEach((item, i) => {
+    item.style.display = 'none'
+  });
+  function showOption(){
+    var option = document.getElementById("options");
+    var value = option.value;
+    document.querySelectorAll('.option').forEach((item, i) => {
+      if(item.classList.contains(value)){
+        item.style.display = 'block';
+      }
+      else{
+          item.style.display = 'none';
+      }
+    });
+
+  }
+
+
+</script>
