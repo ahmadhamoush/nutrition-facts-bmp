@@ -65,7 +65,7 @@ button{
 }
 button[name='example']{
   margin-top: 0;
-  background-color: #D1B000;
+  background-color: #1E1E1E
   color:#eee;
 }
 button[name='bmp']{
