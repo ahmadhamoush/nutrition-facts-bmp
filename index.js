@@ -20,17 +20,17 @@ var ctx = canvas.getContext("2d");
 
   })
 function saveBMP(){
+  let valid = false;
   document.querySelectorAll('input').forEach((item) => {
     if(item.value.length !=''){
-      item.style.borderColor='green'
-
+      item.classList.add('valid')
+      item.classList.remove('invalid')
     }
     else{
-      item.style.borderColor='red'
-      item.style.animation = 'shake 0.5s'
+    item.classList.add('invalid')
+        item.classList.remove('valid')
     }
   });
-
 
    item = {
     name: document.getElementById('name').value,
@@ -96,8 +96,20 @@ function saveBMP(){
     }
   }
 
+  if(document.querySelector('.invalid')){
+    valid = false;
+  }
+  else{
+    valid = true
+  }
+
+console.log(valid)
+if(valid){
   DrawCanvas();
   CanvasToBMP();
+}else{
+  document.querySelector('.message').innerText='Not Valid. Please check highlighted inputs';
+}
 
 }
 

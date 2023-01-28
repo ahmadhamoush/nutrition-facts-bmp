@@ -81,6 +81,16 @@ button:hover,button:active{
   padding:20px;
   line-height: 1.5;
 }
+.valid{
+border-color: green
+}
+.invalid{
+  border-color:red;
+  animation: 'shake 0.5s';
+}
+.message{
+  color:red; margin:10px;
+}
 
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }
